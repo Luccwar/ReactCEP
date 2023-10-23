@@ -16,7 +16,7 @@ const CEP = ({ navigation }: any) => {
         if(cep == ""){
             Alert.alert("CEP Vazio")
         }
-        else if( ( !/[-]/g.test(cep) && cep.length == 9) || ( cep.charAt(5) != "-" && cep.length == 9) || (/[-]/g.test(cep) && cep.length == 8) || cep.length < 8 || cep.length > 9 || regExp.test(cep) || cep.indexOf(' ') >= 0 ){
+        else if( ( !/[-]/g.test(cep) && cep.length == 9) || ( cep.charAt(5) != "-" && cep.length == 9) || (cep.indexOf('-') != cep.lastIndexOf('-')) || (/[-]/g.test(cep) && cep.length == 8) || cep.length < 8 || cep.length > 9 || regExp.test(cep) || cep.indexOf(' ') >= 0 ){
             Alert.alert("CEP Inválido")
         }
 
